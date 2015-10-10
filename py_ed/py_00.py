@@ -3,7 +3,7 @@ import os
 
 list_dir = os.listdir(".")
 
-f2 = open("ffw", 'w')
+f2 = open("result.txt", 'w')
 f2.write('')
 f2.close()
 
