@@ -28,13 +28,13 @@ def each_el_of_list(l):
 each_el_of_list(sname_list)
 
 def show_one_by_index(fl):
-	x = input("введите индекс студента : ")
-	if fl[x]:
+	x = int(input("введите индекс студента : "))
+	if fl[int(x)]:
 		print(' '.join(fl[x]))
 
 def show_comprehensions(fl):
 	text = 'Студент {} {}'
-	x = raw_input("введите индекс студента : ")
+	x = input("введите индекс студента : ")
 	if str(x).count(';') and len(x.split(';'))==2:
 		#comp = x.split()
 		if ( len(fl) > int(x.split(';')[0]) >= 0 ) and (( len(fl) >= int(x.split(';')[1]) > 0 )):
@@ -47,10 +47,10 @@ def show_comprehensions(fl):
 
 def show_with_letter_in_name(fl):
 	text = 'в имени {} студента {} {} содержится буква {}'
-	x = raw_input("введите букву искомую в имени : ")
+	x = input("введите букву искомую в имени : ")
 	if x:
 		for i in fl:
-			if i[1].decode('utf-8').lower().encode('utf-8').count(x.decode('utf-8').lower().encode('utf-8')):
+			if i[1].lower().count(x.lower()):
 				print(text.format(i[1].strip(), i[0].strip(), i[1].strip(), x)) #strip??
 
 def group_by_name(fl):
@@ -64,7 +64,7 @@ def group_by_name(fl):
 	return uniq_names
 
 while True:
-	what_we_do = raw_input('0 - вывести по номеру имя и фамилию, 1 - вывести срез, 2 - найти по букве, 3 вывести сгруппировав по именам, 4 выход : ')
+	what_we_do = input('0 - вывести по номеру имя и фамилию, 1 - вывести срез, 2 - найти по букве, 3 вывести сгруппировав по именам, 4 выход : ')
 
 	if str(what_we_do) not in ['0','1','2','3','4']:
 		print ('введено не корректное значение')
